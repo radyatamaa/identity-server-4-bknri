@@ -42,17 +42,9 @@ namespace Microsoft.Extensions.DependencyInjection
             var builder = services.AddIdentityServerBuilder();
 
             //dev
-            //services.AddDbContext<UMDbContext>
-            //     (options => options.UseMySql("server=api-blog-cgo-mysqldbserver.mysql.database.azure.com;port=3306;database=cgo_um-dev;uid=AdminCgo@api-blog-cgo-mysqldbserver;password='Standar123.'"));
-
-            //staging
-            //services.AddDbContext<UMDbContext>
-            //     (options => options.UseMySql("server=api-blog-cgo-mysqldbserver.mysql.database.azure.com;port=3306;database=cgo_um;uid=AdminCgo@api-blog-cgo-mysqldbserver;password='Standar123.'"));
-
-
-            //prd
             services.AddDbContext<UMDbContext>
-                 (options => options.UseMySql("server=cgo-indonesia-prod.mysql.database.azure.com;port=3306;database=cgo_um;uid=admincgo@cgo-indonesia-prod;password='k_)V/p53u9z.V{C,'"));
+                 (options => options.UseMySql("server=bkni-ri.mysql.database.azure.com;port=3306;database=bkni_ri_um_dev;uid=adminbkni;password='Standar123.'"));
+
 
             services.AddScoped<IDbContext>(c => c.GetService<UMDbContext>());
             services.AddScoped<IUsersService, UsersService>();
